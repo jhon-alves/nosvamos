@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, AddressBox, ActionBox, Btn, Info } from './styles';
+import { Container, Header, AddressBox, ActionBox, Btn, Info, TitleActionBox, BtnAnexarImg, BtnGravarAudio, InfoUploud } from './styles';
 import { TextInput, StyleSheet } from 'react-native';
 
 export default function CadastroVolta({ navigation }) {
@@ -28,6 +28,46 @@ export default function CadastroVolta({ navigation }) {
           />
         </ActionBox>
 
+        <ActionBox>
+          <TitleActionBox>1º Ponto de ônibus</TitleActionBox>
+          <BtnAnexarImg>
+            <InfoUploud>Anexar Imagem</InfoUploud>
+          </BtnAnexarImg>
+          <BtnGravarAudio>
+          <InfoUploud>Gravar Áudio</InfoUploud>
+          </BtnGravarAudio>
+        </ActionBox>
+
+        <ActionBox>
+          <TitleActionBox>Ônibus</TitleActionBox>
+          <BtnAnexarImg>
+            <InfoUploud>Anexar Imagem</InfoUploud>
+          </BtnAnexarImg>
+          <BtnGravarAudio>
+          <InfoUploud>Gravar Áudio</InfoUploud>
+          </BtnGravarAudio>
+        </ActionBox>
+
+        <ActionBox>
+          <TitleActionBox>Descida do ônibus</TitleActionBox>
+          <BtnAnexarImg>
+            <InfoUploud>Anexar Imagem</InfoUploud>
+          </BtnAnexarImg>
+          <BtnGravarAudio>
+          <InfoUploud>Gravar Áudio</InfoUploud>
+          </BtnGravarAudio>
+        </ActionBox>
+
+        <ActionBox>
+          <TitleActionBox>Chegada</TitleActionBox>
+          <BtnAnexarImg>
+            <InfoUploud>Anexar Imagem</InfoUploud>
+          </BtnAnexarImg>
+          <BtnGravarAudio>
+          <InfoUploud>Gravar Áudio</InfoUploud>
+          </BtnGravarAudio>
+        </ActionBox>
+
         <Btn onpress={() => navigation.navigate('CadastroVolta')}>
           <Info>Finalizar</Info>
         </Btn>
@@ -40,5 +80,6 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 15,
     padding: 15,
+    fontWeight: 'bold',
   },
 });

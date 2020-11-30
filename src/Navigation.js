@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Rotas
 import {
+  MainStackNavigator,
   HomeStackNavigator,
   TrajetosStackNavigator,
   AcompanheStackNavigator,
@@ -17,7 +18,7 @@ const Tab = createBottomTabNavigator();
 export default function Navigation() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Main"
       tabBarOptions={{
         style: {
           backgroundColor: '#fff',
@@ -27,9 +28,18 @@ export default function Navigation() {
         inactiveTintColor: '#92929c',
       }}
     >
+
+<Tab.Screen
+        name="Main"
+        component={ MainStackNavigator }
+        options={{
+          tabBarVisible: false
+        }}
+      />
+
       <Tab.Screen
         name="Home"
-        component={HomeStackNavigator}
+        component={ HomeStackNavigator }
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -39,7 +49,7 @@ export default function Navigation() {
       />
       <Tab.Screen
         name="Trajetos"
-        component={TrajetosStackNavigator}
+        component={ TrajetosStackNavigator }
         options={{
           tabBarLabel: 'Trajetos',
           tabBarIcon: ({ color }) => (
@@ -49,7 +59,7 @@ export default function Navigation() {
       />
       <Tab.Screen
         name="Acompanhe"
-        component={AcompanheStackNavigator}
+        component={ AcompanheStackNavigator }
         options={{
           tabBarLabel: 'Acompanhe',
           tabBarIcon: ({ color }) => (
@@ -59,7 +69,7 @@ export default function Navigation() {
       />
       <Tab.Screen
         name="Perfil"
-        component={PerfilStackNavigator}
+        component={ PerfilStackNavigator }
         options={{
           tabBarLabel: 'Perfil',
           tabBarIcon: ({ color }) => (

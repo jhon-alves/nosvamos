@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Rotas
 import MainScreen from './screens/Main';
 import LoginScreen from './screens/Login';
+import CadastroRespScreen from './screens/CadastroResp';
+import CadastroDefScreen from './screens/CadastroResp/CadastroDef';
 import HomeScreen from './screens/Home';
 import TrajetosScreen from './screens/Trajetos';
 import AcompanheScreen from './screens/Acompanhe';
@@ -24,28 +26,45 @@ const HeaderBar = {
   },
 }
 
-const MainStackNavigator = () => {
 
+const MainStackNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={ HeaderBar } options ={{tabBarVisible: false}}>
       <Stack.Screen
         name="Main"
-        component={MainScreen}
+        component={ MainScreen }
+        options={{ headerShown: false }}
+        
+        
+        
       />
       <Stack.Screen
         name="Login"
-        component={LoginScreen}
+        component={ LoginScreen }
+        options={{ title: '', tabBarVisible: false}}
+      />
+
+      <Stack.Screen
+        name="CadastroResp"
+        component={ CadastroRespScreen }
+        options={{ title: ''}}
+      />
+
+      <Stack.Screen
+        name="CadastroDef"
+        component={ CadastroDefScreen }
+        options={{ title: ''}}
       />
     </Stack.Navigator>
-  );
-};
+  )
+}
 
 const HomeStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={HeaderBar}>
+    <Stack.Navigator screenOptions={ HeaderBar }>
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={ HomeScreen }
         options={{ title: 'Bem Vindo' }}
       />
     </Stack.Navigator>
@@ -53,14 +72,14 @@ const HomeStackNavigator = () => {
 };
 const TrajetosStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={HeaderBar}>
+    <Stack.Navigator screenOptions={ HeaderBar }>
       <Stack.Screen
         name="Trajetos"
-        component={TrajetosScreen}
+        component={ TrajetosScreen }
       />
       <Stack.Screen
         name="CadastroTrajeto"
-        component={CadastroTrajetoScreen}
+        component={ CadastroTrajetoScreen }
         options={{ title: "Adicionar Trajeto" }}
       />
     </Stack.Navigator>
@@ -68,7 +87,7 @@ const TrajetosStackNavigator = () => {
 };
 const AcompanheStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={HeaderBar}>
+    <Stack.Navigator screenOptions={ HeaderBar }>
       <Stack.Screen
         name="Acompanhe"
         component={AcompanheScreen}
@@ -78,20 +97,21 @@ const AcompanheStackNavigator = () => {
 };
 const PerfilStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={HeaderBar}>
+    <Stack.Navigator screenOptions={ HeaderBar }>
       <Stack.Screen
         name="Perfil"
-        component={PerfilScreen}
+        component={ PerfilScreen }
         options={{ headerShown: false }}
       />
       <Stack.Screen
         name="EditPerfil"
-        component={EditPerfilScreen}
+        component={ EditPerfilScreen }
         options={{ title: "Editar Perfil" }}
       />
     </Stack.Navigator>
   );
 };
+
 export {
   MainStackNavigator,
   HomeStackNavigator,

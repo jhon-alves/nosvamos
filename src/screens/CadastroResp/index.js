@@ -1,35 +1,35 @@
 import React from 'react';
+
 import {
   StyleSheet,
   View,
-  Image,
+  FlatList,
   TextInput,
   Text,
   TouchableOpacity,
 } from 'react-native';
 
 
-export default function LoginScreen({ navigation }) {
+export default function CadastroResp({ navigation }) {
+
   return (
     <View style={styles.body}>
-      <Image
-        style={{ width: 250, marginBottom: 20 }}
-        resizeMode="contain"
-        source={require('../../images/logotipo.png')}
-      />
+      <Text style={styles.title}>Informações da Pessoa com deficiência</Text>
       <TextInput
         style={styles.input}
-        placeholder="E-mail" />
+        placeholder="Nome" />
+
       <TextInput
         style={styles.input}
         placeholder="Senha" />
+      
 
 
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('CadastroDef')}
       >
-        <Text style={styles.textButton}>Entrar</Text>
+        <Text style={styles.textButton}>Salvar</Text>
       </TouchableOpacity>
 
     </View>
@@ -42,13 +42,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#9d1c65',
+    backgroundColor: '#fff',
   },
   title: {
-    color: '#828181',
-    fontSize: 16,
+    color: '#78849E',
+    fontSize: 20,
     marginTop: 30,
     textTransform: 'uppercase',
+    textAlign: 'center',
   },
   input: {
     backgroundColor: '#fff',
@@ -60,8 +61,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 10,
   },
+  item: {
+    alignItems: "center",
+    backgroundColor: "#dcda48",
+    flexGrow: 1,
+    margin: 4,
+    padding: 20
+  },
+  senhaText : {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#78849E',
+    padding: 10,
+    margin: 0
+  },
+ 
   btn: {
-    backgroundColor: '#333',
+    backgroundColor: '#2A2E43',
     width: '80%',
     marginTop: 20,
     borderRadius: 5,

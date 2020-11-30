@@ -4,7 +4,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background: #e64783;
+  background: #9d1c65;
 `;
 export const Header = styled.View``;
 
@@ -21,11 +21,10 @@ export const Buttons = styled.View`
   margin-top: 150px;
 `;
 
-
 export const Btn = styled.TouchableOpacity`
   background: #fefbf8;
   margin-top: 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 12px;
 `;
 
@@ -33,6 +32,6 @@ export const Info = styled.Text`
   color: #646971;
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
 `;

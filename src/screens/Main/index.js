@@ -23,7 +23,7 @@ export default function MainScreen({ navigation }) {
         <Btn onPress={() => navigation.navigate('Login')}>
           <Info>Entrar</Info>
         </Btn>
-        <Btn onPress={() => navigation.navigate('Register')}>
+        <Btn onPress={() => navigation.navigate('CadastroResp')}>
           <Info>Cadastre-se</Info>
         </Btn>
       </Buttons>
